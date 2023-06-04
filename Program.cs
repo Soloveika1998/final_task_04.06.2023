@@ -28,3 +28,27 @@ string [] FillArrayString ()
   } while (s != "");
   return arrayString;
 }
+
+//Метод создания массива строк из исходного массива строк с удалением строк больше 3 символов
+string [] RemoveLargeStringsInArrayStrings (string [] array)
+{
+  int count=0;
+  string [] returnArray = new string [count];
+  string [] returnArrayTemp;
+
+  for (int i = 0; i < array.Length; i++)
+  {
+    if (array[i].Length < 4)
+    {
+      count++;
+      returnArrayTemp = new string [count];
+      
+      for (int j = 0; j < returnArrayTemp.Length-1; j++)
+        returnArrayTemp[j] = returnArray[j];
+
+      returnArrayTemp [count-1] = array[i];
+      returnArray = returnArrayTemp;
+    }
+  }
+  return returnArray;
+}
