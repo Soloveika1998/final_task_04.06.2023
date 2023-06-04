@@ -28,3 +28,10 @@ string [] FillArrayString ()
   } while (s != "");
   return arrayString;
 }
+
+//Метод печати массива строк
+void PrintArray (string [] array)
+{
+  for (int i = 0; i < array.Length; i++)
+        Console.WriteLine("#[{0}] = {1}", i, array[i]);
+}
